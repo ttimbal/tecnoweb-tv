@@ -15,21 +15,28 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('days') }}" :active="request()->routeIs('days')">
-                        {{ __('Días') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('categories') }}" :active="request()->routeIs('categories')">
-                        {{ __('Categorias') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('equipments') }}" :active="request()->routeIs('equipments')">
-                        {{ __('Equipos') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
-                        {{ __('Usuarios') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('turns') }}" :active="request()->routeIs('turns')">
-                        {{ __('Turnos') }}
-                    </x-jet-nav-link>
+
+                    @if(\Illuminate\Support\Facades\Auth::user()->type==='adm')
+                        <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
+                            {{ __('Usuarios') }}
+                        </x-jet-nav-link>
+                    @endif
+
+                    @if(\Illuminate\Support\Facades\Auth::user()->type!=='pres')
+                        <x-jet-nav-link href="{{ route('days') }}" :active="request()->routeIs('days')">
+                            {{ __('Días') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('categories') }}" :active="request()->routeIs('categories')">
+                            {{ __('Categorias') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('equipments') }}" :active="request()->routeIs('equipments')">
+                            {{ __('Equipos') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('turns') }}" :active="request()->routeIs('turns')">
+                            {{ __('Turnos') }}
+                        </x-jet-nav-link>
+                    @endif
+
                     <x-jet-nav-link href="{{ route('calendar') }}" :active="request()->routeIs('calendar')">
                         {{ __('Calendario') }}
                     </x-jet-nav-link>

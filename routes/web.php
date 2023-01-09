@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware([
+/*Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
@@ -25,8 +25,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-});
+});*/
 
+Route::get('dashboard', \App\Http\Livewire\Dashboard\Dashboard::class)->middleware('auth')->name('dashboard');
 Route::get('days', \App\Http\Livewire\Days\Days::class)->middleware('auth')->name('days');
 Route::get('categories', \App\Http\Livewire\Categories\Categories::class)->middleware('auth')->name('categories');
 Route::get('equipments', \App\Http\Livewire\Equipments\Equipments::class)->middleware('auth')->name('equipments');

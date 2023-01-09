@@ -32,24 +32,24 @@
                 let end_date = new Date(item.end_date);
                 console.log(start_date)
                 while (start_date <= end_date) {
+                    //console.log(start_date)
                     const shortDate = start_date.toISOString().substring(0, 10);
                     if (item.start_date <= shortDate) {
                         const day = weekday[start_date.getDay()];
-                        console.log(day)
                         for (let i = 0; i < item.days.length; i++) {
                             if (item.days[i].name === day) {
-                                events.push({
+                                const currentEvent={
                                     title: item.name,
                                     start: shortDate + 'T' + item.start_time,
                                     end: shortDate + 'T' + item.end_time,
                                     id: item.id
-                                })
+                                }
+                                events.push(currentEvent)
+                               // console.log(currentEvent)
                             }
                         }
                     }
                     start_date.setDate(start_date.getDate() + 1)
-                    console.log(start_date.toLocaleDateString())
-                    console.log(start_date.toISOString())
                 }
 
 

@@ -135,7 +135,8 @@ class Main extends Component
         $eventCategory->save();
 
         Event_per_day::where('event_id', $event->id)->delete();
-        foreach ($this->selectedDays as $selectedDay) {
+       $unique_days = array_unique($this->selectedDays);
+        foreach ($unique_days as $selectedDay) {
 
             Event_per_day::Create([
                 'event_id' => $event->id,
