@@ -26,6 +26,7 @@ Route::get('/', function () {
         return view('dashboard');
     })->name('dashboard');
 });*/
+Route::get('/home', [\App\Http\Controllers\UserController::class,'index'])->name('home.index');
 
 Route::get('dashboard', \App\Http\Livewire\Dashboard\Dashboard::class)->middleware('auth')->name('dashboard');
 Route::get('days', \App\Http\Livewire\Days\Days::class)->middleware('auth')->name('days');
