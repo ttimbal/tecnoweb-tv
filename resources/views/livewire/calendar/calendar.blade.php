@@ -68,7 +68,7 @@
                             center: '',
                             end: 'prev,next'
                         },*/
-                initialDate: '2023-01-04',
+                initialDate: '2023-01-17',
                 navLinks: true, // can click day/week names to navigate views
                 editable: true,
                 dayMaxEvents: true,
