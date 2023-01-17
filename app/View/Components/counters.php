@@ -38,6 +38,6 @@ class counters extends Component
             ]);
         }
 
-        return view('components.counters');
+        return view('components.counters',['counter'=>$this->counter]);
     }
 }

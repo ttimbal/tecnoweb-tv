@@ -41,6 +41,7 @@
            {{-- <div class="bg-red-400 w-full h-16">{{$counter}}</div>--}}
 
         </div>
+        @livewire('couters.counters')
         <x-counters></x-counters>
 
         @stack('modals')
