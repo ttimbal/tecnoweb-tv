@@ -1,4 +1,4 @@
-<div>
+<div class="dark:bg-gray-200">
     <x-slot:head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css"/>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.0.2/index.global.min.js"></script>
