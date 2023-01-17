@@ -42,7 +42,6 @@
 
         </div>
         @livewire('couters.counters')
-        <x-counters></x-counters>
 
         @stack('modals')
 
